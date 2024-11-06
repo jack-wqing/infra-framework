@@ -1,7 +1,7 @@
 package com.jindi.infra.traffic.sentinel.mvc.parser;
 
-import org.apache.commons.lang3.StringUtils;
 import com.alibaba.csp.sentinel.adapter.spring.webmvc.callback.RequestOriginParser;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 

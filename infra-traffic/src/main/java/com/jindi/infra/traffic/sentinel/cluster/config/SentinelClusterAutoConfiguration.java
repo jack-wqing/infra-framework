@@ -1,30 +1,31 @@
 package com.jindi.infra.traffic.sentinel.cluster.config;
 
-import com.jindi.infra.traffic.sentinel.cluster.properties.SentinelClusterProperties;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.alibaba.nacos.api.config.ConfigService;
+import com.alibaba.nacos.client.naming.NacosNamingMaintainService;
+import com.alibaba.nacos.client.naming.NacosNamingService;
+import com.jindi.infra.traffic.sentinel.cluster.discovery.NacosTokenServerDiscovery;
+import com.jindi.infra.traffic.sentinel.cluster.selector.HashSelector;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.jindi.infra.traffic.sentinel.cluster.init.SentinelClusterClientInitializer;
-
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @Configuration
-@EnableConfigurationProperties(SentinelClusterProperties.class)
 @ConditionalOnProperty(name = {"rpc.sentinel.cluster.enable"}, havingValue = "true")
+@ConditionalOnClass({NacosNamingService.class, NacosNamingMaintainService.class, ConfigService.class})
 public class SentinelClusterAutoConfiguration {
 
-    @Autowired
-    private SentinelClusterProperties properties;
-
-    @ConditionalOnMissingBean
     @Bean
-    public SentinelClusterClientInitializer sentinelClusterClientInitializer() {
-        return new SentinelClusterClientInitializer(properties);
+    @ConditionalOnMissingBean
+    public NacosTokenServerDiscovery nacosTokenServerDiscovery() {
+        return new NacosTokenServerDiscovery();
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public HashSelector hashSelector() {
+        return new HashSelector();
     }
 
 }

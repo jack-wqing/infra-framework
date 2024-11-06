@@ -22,10 +22,10 @@
             <groupId>com.jindi.infra</groupId>
             <artifactId>infra-core</artifactId>
         </dependency>
-        <!--<dependency>
+        <dependency>
             <groupId>com.jindi.infra</groupId>
             <artifactId>infra-metrics</artifactId>
-        </dependency>-->
+        </dependency>
         <dependency>
             <groupId>com.jindi.infra</groupId>
             <artifactId>infra-tools</artifactId>

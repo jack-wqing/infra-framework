@@ -1,0 +1,105 @@
+spring:
+  cloud:
+    nacos:
+      # nacos.core.auth.enabled=true 开启权限验证
+      discovery:
+        # nacos地址
+        server-addr: 10.2.53.187:8848,10.2.53.196:8848,10.97.1.240:8848
+        username: nacos
+        password: nacos
+        namespace: sentinel
+        group: ${spring.application.name}
+        metadata:
+          management:
+            context-path: ${server.servlet.context-path}/actuator
+      config:
+        server-addr: 10.2.53.187:8848,10.2.53.196:8848,10.97.1.240:8848
+        username: nacos
+        password: nacos
+        #data-id后缀
+        file-extension: ""
+        # 分组名称
+        namespace: sentinel
+        group: ${spring.application.name}
+        encode: UTF-8
+        # 修改后自动加载
+        refresh-enabled: true
+        # 允许nacos服务端向本地同步配置
+        enable-remote-sync-config: true
+    sentinel:
+      transport:
+        # 添加sentinel的控制台地址
+        dashboard: sentinel-pre.jindidata.com
+        #指定应用与Sentinel控制台交互的端口，应用本地会起一个该端口占用的HttpServer
+        # port: 8719
+      web-context-unify: false # 默认将调用链路收敛，导致链路流控效果无效
+      # 持久化配置
+      datasource:
+        flow-rule: # 唯一名称可自定义
+          nacos:
+            # 设置Nacos的连接地址、命名空间和Group ID
+            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+            username: ${spring.cloud.nacos.discovery.username}
+            password: ${spring.cloud.nacos.discovery.password}
+            namespace: sentinel # 为空，使用默认的public
+            # 设置Nacos中配置文件的命名规则
+            dataId: ${spring.application.name}-flow-rules
+            groupId: ${spring.application.name}
+            data-type: json
+            # 必填的重要字段，指定当前规则类型是"限流"
+            rule-type: flow
+        degrade-rule: # 唯一名称可自定义
+          nacos:
+            # 设置Nacos的连接地址、命名空间和Group ID
+            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+            username: ${spring.cloud.nacos.discovery.username}
+            password: ${spring.cloud.nacos.discovery.password}
+            namespace: sentinel # 为空，使用默认的public
+            # 设置Nacos中配置文件的命名规则
+            dataId: ${spring.application.name}-degrade-rules
+            groupId: ${spring.application.name}
+            data-type: json
+            # 必填的重要字段，指定当前规则类型是"限流"
+            rule-type: degrade
+        system-rule: # 唯一名称可自定义
+          nacos:
+            # 设置Nacos的连接地址、命名空间和Group ID
+            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+            username: ${spring.cloud.nacos.discovery.username}
+            password: ${spring.cloud.nacos.discovery.password}
+            namespace: sentinel # 为空，使用默认的public
+            # 设置Nacos中配置文件的命名规则
+            dataId: ${spring.application.name}-system-rules
+            groupId: ${spring.application.name}
+            data-type: json
+            # 必填的重要字段，指定当前规则类型是"限流"
+            rule-type: system
+        param-flow-rule: # 唯一名称可自定义
+          nacos:
+            # 设置Nacos的连接地址、命名空间和Group ID
+            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+            username: ${spring.cloud.nacos.discovery.username}
+            password: ${spring.cloud.nacos.discovery.password}
+            namespace: sentinel # 为空，使用默认的public
+            # 设置Nacos中配置文件的命名规则
+            dataId: ${spring.application.name}-param-flow-rules
+            groupId: ${spring.application.name}
+            data-type: json
+            # 必填的重要字段，指定当前规则类型是"限流"
+            rule-type: param-flow
+        authority-rule: # 唯一名称可自定义
+          nacos:
+            # 设置Nacos的连接地址、命名空间和Group ID
+            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+            username: ${spring.cloud.nacos.discovery.username}
+            password: ${spring.cloud.nacos.discovery.password}
+            namespace: sentinel # 为空，使用默认的public
+            # 设置Nacos中配置文件的命名规则
+            dataId: ${spring.application.name}-authority-rules
+            groupId: ${spring.application.name}
+            data-type: json
+            # 必填的重要字段，指定当前规则类型是"限流"
+            rule-type: authority
+
+
+

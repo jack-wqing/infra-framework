@@ -1,9 +1,9 @@
 package com.jindi.infra.traffic.sentinel.loader;
 
-import java.util.Properties;
-
 import com.jindi.infra.common.loader.IEnvDefaultConfigLoader;
 import com.jindi.infra.common.util.InnerPropertiesUtils;
+
+import java.util.Properties;
 
 /**
  * @author changbo
