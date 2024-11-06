@@ -1,0 +1,15 @@
+server:
+  port: 20003
+rpc:
+  server:
+    port: 20004
+dubbo:
+  protocol:
+    port: 20880
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+        defaultZone: http://eureka-dev.services.huawei/eureka/

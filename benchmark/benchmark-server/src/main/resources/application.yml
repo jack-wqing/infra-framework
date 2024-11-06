@@ -1,0 +1,28 @@
+server:
+  port: 20001
+  servlet:
+    context-path: /
+rpc:
+  enable: true
+  server:
+    port: 20002
+  client:
+    connectTimeoutMillis: 1000
+logging:
+  level:
+    root: info
+dubbo:
+  application:
+    name: benchmark-server
+  protocol:
+    name: dubbo
+    port: 20881
+  registry:
+    address: zookeeper://zookeeper-dev.middleware.huawei:2181
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+        defaultZone: http://eureka-test.services.huawei/eureka/

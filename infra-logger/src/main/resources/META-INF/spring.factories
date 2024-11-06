@@ -1,0 +1,8 @@
+org.springframework.context.ApplicationListener=\
+  com.jindi.infra.logger.listener.LogAppenderInjectListener
+
+org.springframework.boot.env.EnvironmentPostProcessor=\
+  com.jindi.infra.logger.config.LineNumberEnvironmentPostProcessor
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.jindi.infra.logger.LoggerAutoConfiguration

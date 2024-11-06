@@ -1,0 +1,10 @@
+rpc:
+  client:
+    connectTimeoutMillis: 100
+    callTimeoutMillis: 1000
+    servers:
+      - serverName: infra-grpc-test
+        target: localhost:12345
+        direct: true
+  server:
+    port: 12345

@@ -1,0 +1,1 @@
+dubboServerMetricsProviderFilter=com.jindi.infra.metrics.prometheus.metrics.DubboServerMetricsFilter

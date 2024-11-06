@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.jindi.infra.cache.redis.autoconfig.CacheEnhanceAutoConfiguration,\
+com.jindi.infra.cache.redis.autoconfig.TycRedisAutoConfiguration

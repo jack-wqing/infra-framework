@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config mode="client">
+    <servers>
+        <server ip="10.97.1.240" port="2280" http-port="80"/>
+    </servers>
+</config>

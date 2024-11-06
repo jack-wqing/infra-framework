@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: benchmark-server
+    group: infra
+  profiles:
+    active: dev

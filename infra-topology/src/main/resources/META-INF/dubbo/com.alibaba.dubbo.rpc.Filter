@@ -1,0 +1,2 @@
+topologyDubboClientFilter=com.jindi.infra.topology.dubbo.filter.TopologyDubboClientFilter
+topologyDubboServerFilter=com.jindi.infra.topology.dubbo.filter.TopologyDubboServerFilter

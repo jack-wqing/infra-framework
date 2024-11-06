@@ -1,0 +1,12 @@
+server:
+  port: 20009
+rpc:
+  server:
+    port: 20010
+dubbo:
+  protocol:
+    port: 20884
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-pro.services.huawei/eureka/

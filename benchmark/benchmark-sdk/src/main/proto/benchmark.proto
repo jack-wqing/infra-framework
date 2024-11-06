@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package com.jindi.infra.benchmark;
+
+option java_multiple_files = true;
+
+import "label.proto";
+
+service UserService {
+
+  rpc getOrCreateUserDTO (UserDTO) returns (UserDTO) {}
+}
+
+message UserDTO {
+
+  enum Role {
+    COMMON = 0;
+    ADMIN = 1;
+    SUPER_ADMIN = 2;
+  }
+
+  uint64 id = 1;
+  string username = 2;
+  string password = 3;
+  string realName = 4;
+  string address = 5;
+  string email = 6;
+  string tag = 7;
+  bool status = 8;
+  Role role = 9;
+  uint64 createTime = 10;
+  uint64 updateTime = 11;
+  repeated LabelDTO labels = 12;
+}
+

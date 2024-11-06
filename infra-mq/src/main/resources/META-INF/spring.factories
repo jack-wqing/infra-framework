@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.jindi.infra.mq.MQAutoConfiguration
+
+org.springframework.context.ApplicationListener=\
+com.jindi.infra.mq.kafka.listener.KafkaStartupApplicationListener

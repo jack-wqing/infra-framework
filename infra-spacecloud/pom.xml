@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.jindi.infra</groupId>
+        <artifactId>infra-bom</artifactId>
+        <version>2.0.0-SNAPSHOT</version>
+        <relativePath></relativePath>
+    </parent>
+    <artifactId>infra-spacecloud</artifactId>
+    <name>infra-spacecloud</name>
+    <version>2.0.6-SpaceCloud-SNAPSHOT</version>
+    <description>基础架构的愿景，让用户纵享丝滑; space-cloud 客户端</description>
+    <dependencies>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.jindi.infra</groupId>
+            <artifactId>infra-metrics</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.jindi.infra</groupId>
+            <artifactId>infra-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.jindi.infra</groupId>
+            <artifactId>infra-traffic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.jindi.infra</groupId>
+            <artifactId>infra-trace</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

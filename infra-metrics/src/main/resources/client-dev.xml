@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config mode="client">
+    <servers>
+        <!-- dev环境 -->
+`        <server ip="10.96.188.249" port="2280" http-port="8080"/>
+    </servers>
+</config>

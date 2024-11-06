@@ -1,0 +1,10 @@
+server:
+  port: 10005
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://eureka-pro.services.huawei/eureka/

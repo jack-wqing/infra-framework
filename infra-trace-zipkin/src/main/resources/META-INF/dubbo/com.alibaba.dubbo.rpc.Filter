@@ -1,0 +1,2 @@
+dubboConsumerFilter=com.jindi.infra.trace.dubbo.filter.DubboClientFilter
+dubboProviderFilter=com.jindi.infra.trace.dubbo.filter.DubboServerFilter

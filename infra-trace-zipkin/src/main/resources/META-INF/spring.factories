@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.jindi.infra.trace.TraceAutoConfiguration,\
+  com.jindi.infra.trace.feign.config.TraceFeignAutoConfiguration,\
+  com.jindi.infra.trace.http.config.TraceHttpAutoConfiguration,\
+  com.jindi.infra.trace.dubbo.config.TraceDubboAutoConfiguration,\
+  com.jindi.infra.trace.grpc.config.TraceGrpcAutoConfiguration,\
+  com.jindi.infra.trace.kafka.config.TraceKafkaAutoConfiguration

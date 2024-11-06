@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.jindi.infra.dataapi.spacecloud.SpaceCloudAutoConfiguration,com.jindi.infra.dataapi.oneservice.config.OneServiceAutoConfiguration
+
+org.springframework.context.ApplicationListener=com.jindi.infra.dataapi.oneservice.listener.OneServiceApplicationListener

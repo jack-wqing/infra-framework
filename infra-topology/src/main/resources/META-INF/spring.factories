@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.jindi.infra.topology.TopologyAutoConfiguration,\
+  com.jindi.infra.topology.feign.config.TopologyFeignAutoConfiguration,\
+  com.jindi.infra.topology.grpc.config.TopologyGrpcAutoConfiguration,\
+  com.jindi.infra.topology.http.config.TopologyHttpAutoConfiguration
+
+

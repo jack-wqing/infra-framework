@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.jindi.infra.datasource.autoconfig.TycMybatisAutoConfiguration,\
+com.jindi.infra.datasource.InfraDataSourceAutoConfiguration,\
+com.jindi.infra.datasource.autoconfig.PageHelperAutoConfiguration

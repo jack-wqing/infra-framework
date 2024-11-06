@@ -1,0 +1,2 @@
+dubboConsumerMultiProtocolFilter=com.jindi.infra.dubbo.interceptor.DubboClientMultiProtocolFilter
+dubboProviderMultiProtocolFilter=com.jindi.infra.dubbo.interceptor.DubboServerMultiProtocolFilter

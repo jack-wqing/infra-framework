@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package infra;
+
+option java_package = "com.jindi.infra.grpc";
+
+// 天眼查扩展
+service TycExtend {
+
+  // 探活
+  rpc ping (Empty) returns (Empty) {}
+}
+
+message Empty {
+}

@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.jindi.infra.tools.config.ToolsConfiguration
+
+org.springframework.context.ApplicationListener=\
+com.jindi.infra.tools.thread.DynamicThreadPoolConfigure

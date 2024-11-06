@@ -1,0 +1,3 @@
+com.jindi.infra.logger.loader.ConsoleAppenderLoader
+com.jindi.infra.logger.loader.PodFileConsoleRollAppenderLoader
+com.jindi.infra.logger.loader.PodFileErrorRollAppenderLoader

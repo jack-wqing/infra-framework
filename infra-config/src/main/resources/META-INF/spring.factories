@@ -1,0 +1,8 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.jindi.infra.config.ConfigAutoConfiguration
+
+org.springframework.context.ApplicationListener=\
+com.jindi.infra.config.apollo.listener.ApolloStartupApplicationListener
+
+org.springframework.context.ApplicationContextInitializer=\
+com.jindi.infra.config.LogLevelApplicationContextInitializer

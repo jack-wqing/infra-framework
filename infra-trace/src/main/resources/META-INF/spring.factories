@@ -1,0 +1,8 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.jindi.infra.trace.config.TracerContextAutoConfiguration,\
+  com.jindi.infra.trace.decorator.TraceSpanDecoratorAutoConfiguration,\
+  com.jindi.infra.trace.grpc.config.TraceGrpcAutoConfiguration,\
+  com.jindi.infra.trace.schedule.TraceScheduleAutoConfiguration,\
+  com.jindi.infra.trace.dubbo.config.TraceDubboAutoConfiguration
+
+
