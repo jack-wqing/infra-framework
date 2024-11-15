@@ -1,8 +1,8 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.jindi.infra.metrics.cat.config.CatAutoConfiguration,\
-com.jindi.infra.metrics.prometheus.config.PrometheusAutoConfiguration,\
-com.jindi.infra.metrics.thread.ThreadAutoConfiguration
+com.zspace.infra.metrics.cat.config.CatAutoConfiguration,\
+com.zspace.infra.metrics.prometheus.config.PrometheusAutoConfiguration,\
+com.zspace.infra.metrics.thread.ThreadAutoConfiguration
 
 
 org.springframework.boot.env.EnvironmentPostProcessor=\
-com.jindi.infra.metrics.cat.config.CatEnvironmentPostProcessor
+com.zspace.infra.metrics.cat.config.CatEnvironmentPostProcessor

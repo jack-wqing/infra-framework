@@ -4,7 +4,7 @@ import com.jindi.infra.datasource.properties.TycDataSourceHolder;
 import com.jindi.infra.datasource.properties.TycDataSourceProperties;
 import com.jindi.infra.tools.util.BeanUtils;
 import com.jindi.infra.datasource.utils.DataSourcePropertiesUtils;
-import com.jindi.infra.metrics.cat.interceptor.CatMybatisInterceptor;
+import com.zspace.infra.metrics.cat.interceptor.CatMybatisInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ClassUtils;
 import org.apache.commons.lang3.StringUtils;

@@ -4,7 +4,7 @@ import com.dianping.cat.Cat;
 import com.dianping.cat.message.Message;
 import com.dianping.cat.message.Transaction;
 import com.jindi.infra.feign.constant.FeignConsts;
-import com.jindi.infra.metrics.cat.constant.CatType;
+import com.zspace.infra.metrics.cat.constant.CatType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

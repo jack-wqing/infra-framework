@@ -41,7 +41,7 @@ app.name={项目名}
 
 ```java
 import com.jindi.infra.metrics.cat.aop.CatTransaction;
-import com.jindi.infra.metrics.cat.constant.CatType;
+import com.zspace.infra.metrics.cat.constant.CatType;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;

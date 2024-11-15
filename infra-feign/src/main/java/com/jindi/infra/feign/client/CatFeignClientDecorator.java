@@ -1,6 +1,6 @@
 package com.jindi.infra.feign.client;
 
-import static com.jindi.infra.metrics.cat.constant.CatType.FEIGN_CALL;
+import static com.zspace.infra.metrics.cat.constant.CatType.FEIGN_CALL;
 
 import java.io.IOException;
 
