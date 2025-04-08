@@ -21,7 +21,7 @@ import com.jindi.infra.registry.nacos.properties.NacosProperties;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 服务发现
+ * 服务发现 nacos 实现
  */
 @Slf4j
 public class HuaweiNacosDiscoveryProvider implements DiscoveryProvider, EnvironmentAware {

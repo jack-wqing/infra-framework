@@ -15,6 +15,7 @@ import com.jindi.infra.grpc.pure.util.InnerIpUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
+// nacos 服务注册
 @Slf4j
 public class ServerRegister {
 

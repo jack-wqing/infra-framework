@@ -3,6 +3,7 @@ package com.jindi.infra.grpc.pure.loadbalance;
 import io.grpc.LoadBalancer;
 import io.grpc.LoadBalancerProvider;
 
+// nacos 负责均衡器实现
 public class NacosLoadBalancerProvider extends LoadBalancerProvider {
 
 	@Override

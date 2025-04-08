@@ -14,6 +14,7 @@ import com.jindi.infra.grpc.pure.constant.MiddlewareConfig;
 import java.util.List;
 import java.util.Properties;
 
+// Sentinel治理集成
 public class SentinelInitializer {
 
     private static final String FLOW_RULES_FORMAT = "%s-flow-rules";
