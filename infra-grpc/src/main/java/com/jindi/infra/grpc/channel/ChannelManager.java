@@ -52,9 +52,10 @@ public class ChannelManager implements Closeable {
 	private ExecutorService executor;
 	private final Map<String, Map<Node, ManagedChannel>> channelCache = new ConcurrentHashMap<>();
 	private final Object lock = new Object();
-	private final NioEventLoopGroup nioEventLoopGroup = new NioEventLoopGroup(
-			Runtime.getRuntime().availableProcessors());
+	private final NioEventLoopGroup nioEventLoopGroup = new NioEventLoopGroup(Runtime.getRuntime().availableProcessors());
+
 	private final TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
+
 		public X509Certificate[] getAcceptedIssuers() {
 			return new X509Certificate[0];
 		}
@@ -65,12 +66,17 @@ public class ChannelManager implements Closeable {
 		public void checkServerTrusted(X509Certificate[] certs, String authType) {
 		}
 	}};
+
 	private final String region;
+
 	@Autowired
 	private ObjectProvider<List<DiscoveryProvider>> discoveryProviderObjectProvider;
+
 	@Autowired
 	private RpcProperties rpcProperties;
+
 	private final AtomicReference<DiscoveryProvider> discoveryProviderReference = new AtomicReference<>(null);
+
 	private PingManager pingManager;
 
 	public ChannelManager(String region) {

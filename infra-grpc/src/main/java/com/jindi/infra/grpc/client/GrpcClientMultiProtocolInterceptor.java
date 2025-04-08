@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+// 多协议对于请求头处理
 public class GrpcClientMultiProtocolInterceptor implements CallInterceptor {
 
     private final List<MultiProtocolClientInterceptor> interceptorList;

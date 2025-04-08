@@ -21,25 +21,22 @@ import com.jindi.infra.grpc.server.GrpcServiceProxy;
 
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * @author changbo
- * @date 2021/8/29
- */
+
 @Slf4j
-public class GrpcServiceAutoRegistration
-		implements
-			SmartLifecycle,
-			Ordered,
-			SmartApplicationListener,
-			ApplicationContextAware {
+public class GrpcServiceAutoRegistration implements SmartLifecycle, Ordered, SmartApplicationListener, ApplicationContextAware {
 
 	private static final AtomicBoolean RUNNING = new AtomicBoolean(false);
+
 	private final GrpcServiceProxy grpcServiceProxy;
+
 	private final GrpcClientProxy grpcClientProxy;
+
 	@Autowired(required = false)
 	private List<DiscoveryProvider> discoveryProviders;
+
 	@Autowired(required = false)
 	private List<WarmUpRunner> warmUpRunners;
+
 	private ApplicationContext context;
 
 	public GrpcServiceAutoRegistration(GrpcServiceProxy grpcServiceProxy, GrpcClientProxy grpcClientProxy) {

@@ -6,9 +6,7 @@ import io.grpc.BindableService;
 
 import java.lang.reflect.Method;
 
-/**
- * 调用远程方法的上下文信息
- */
+// 方法上下文记录
 public class CallContext {
 
 	private static final ThreadLocal<CallContext> CURRENT_CALL_CONTEXT = new ThreadLocal<>();

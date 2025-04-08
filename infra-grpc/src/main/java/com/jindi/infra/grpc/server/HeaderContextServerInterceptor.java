@@ -16,6 +16,7 @@ import org.springframework.core.annotation.Order;
 import java.util.HashSet;
 import java.util.Set;
 
+// 过滤请求头
 @Slf4j
 @Order(Ordered.HIGHEST_PRECEDENCE + 1)
 public class HeaderContextServerInterceptor implements ServerInterceptor {

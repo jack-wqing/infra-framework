@@ -15,10 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 
-/**
- * 封装简易的上下文传递工具类:客户端拦截器
- * 在发起grpc的最后一步,将上下文信息放入metadata中
- */
+// Client InfraContext
 @Slf4j
 @Order(Ordered.LOWEST_PRECEDENCE)
 public class GrpcInfraContextClientInterceptor implements ClientInterceptor {

@@ -2,19 +2,11 @@ package com.jindi.infra.grpc.extension;
 
 import java.util.Objects;
 
-/**
- * 节点
- */
+
 public class Node {
 
-	/**
-	 * 主机
-	 */
 	private String host;
 
-	/**
-	 * 端口
-	 */
 	private Integer port;
 
 	public Node() {

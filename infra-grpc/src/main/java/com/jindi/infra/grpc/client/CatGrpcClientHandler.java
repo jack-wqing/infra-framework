@@ -7,6 +7,7 @@ import com.dianping.cat.message.Transaction;
 import com.jindi.infra.core.constants.CatType;
 import com.jindi.infra.grpc.constant.RpcConsts;
 
+// Cat gRPC
 public class CatGrpcClientHandler {
 
     public Transaction newTransaction(String method) {

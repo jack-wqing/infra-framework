@@ -27,18 +27,29 @@ import java.util.concurrent.TimeUnit;
 public class PingManager {
 
 	private static final int LOOP_COUNT = 3;
+
 	private static final int SLEEP_MILLIS = 10;
+
 	private static final int INITIAL_DELAY_MILLISECONDS = 60000;
+
 	private static final int PERIOD_MILLISECONDS = 3000;
+
 	private static final String PING_EXECUTOR_NAME = "ping-executor";
+
 	private static final String RPC_CLIENT_PING_SCHEDULED_NAME = "rpc-client-ping-scheduled";
+
 	private static final String INTERNAL_STUB_TYPE = "internal-stub-type";
+
 	private final ExecutorService pingExecutor = ExecutorsUtils.newQueueThreadPool(ExecutorsUtils.FIXED, 4, PING_EXECUTOR_NAME);
-	private final ScheduledExecutorService scheduledExecutorService = Executors
-			.newSingleThreadScheduledExecutor(r -> new Thread(r, RPC_CLIENT_PING_SCHEDULED_NAME));
+
+	private final ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor(r -> new Thread(r, RPC_CLIENT_PING_SCHEDULED_NAME));
+
 	private DiscoveryProvider discoveryProvider;
+
 	private Map<String, Map<Node, ManagedChannel>> channelCache;
+
 	private ChannelManager channelManager;
+
 	private RpcProperties rpcProperties;
 
 	public PingManager(ChannelManager channelManager, RpcProperties rpcProperties) {

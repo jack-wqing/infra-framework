@@ -15,9 +15,7 @@ import com.jindi.infra.grpc.constant.ProtoGoogleJavaMapping;
 import io.grpc.BindableService;
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * 扫描RPCService注解修饰的bean，并将其注册为对外暴露的RPC服务
- */
+// 拦截RPCService的类
 @Slf4j
 public class RPCServiceBeanPostProcessor implements BeanPostProcessor {
 

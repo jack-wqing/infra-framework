@@ -5,6 +5,7 @@ import com.jindi.infra.grpc.extension.Node;
 
 import java.util.List;
 
+// 默认 没有注册中心
 public class NullDiscoveryProvider implements DiscoveryProvider {
 
     @Override

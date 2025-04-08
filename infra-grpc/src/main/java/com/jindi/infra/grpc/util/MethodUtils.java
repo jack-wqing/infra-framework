@@ -22,12 +22,7 @@ public class MethodUtils {
 	private static Map<Method, Method> cachedMethodMapping = new ConcurrentHashMap<>();
 	private static Map<Method, MethodDescriptor> methodDescriptorCached = new ConcurrentHashMap<>();
 
-	/**
-	 * 判断是RPC方法
-	 *
-	 * @param method
-	 * @return
-	 */
+
 	public static Boolean isRemoteMethod(Method method) {
 		return cachedRemoteMethod.computeIfAbsent(method, m -> {
 			if (m == null) {
@@ -44,12 +39,6 @@ public class MethodUtils {
 		});
 	}
 
-	/**
-	 * 判断是异步RPC方法
-	 *
-	 * @param method
-	 * @return
-	 */
 	public static Boolean isAsyncMethod(Method method) {
 		return cachedAsyncRemoteMethod.computeIfAbsent(method, m -> {
 			if (!isRemoteMethod(m)) {
@@ -59,12 +48,6 @@ public class MethodUtils {
 		});
 	}
 
-	/**
-	 * 获取异步方法映射的同步方法
-	 *
-	 * @param method
-	 * @return
-	 */
 	public static Method getRemoteMethod(Class<BindableService> serviceClass, Method method) {
 		return cachedMethodMapping.computeIfAbsent(method, m -> {
 			if (!isRemoteMethod(m)) {
@@ -83,13 +66,6 @@ public class MethodUtils {
 		});
 	}
 
-	/**
-	 * 获取RPC方法描述信息
-	 *
-	 * @param method
-	 *            方法
-	 * @return
-	 */
 	public static MethodDescriptor getMethodDescriptor(Class<BindableService> serviceClass, Method method) {
 		return methodDescriptorCached.computeIfAbsent(method, m -> {
 			Class implBaseClass = serviceClass.getSuperclass();

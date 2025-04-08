@@ -36,7 +36,7 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
- * rpc客户端调用处理器
+ * rpc客户端拦截器拦截
  */
 @Slf4j
 public class GrpcClientInvocationHandler implements MethodInterceptor {

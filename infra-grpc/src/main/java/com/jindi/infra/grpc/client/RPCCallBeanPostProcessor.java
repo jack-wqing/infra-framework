@@ -46,6 +46,7 @@ public class RPCCallBeanPostProcessor implements BeanPostProcessor {
 					log.error("aliyun region已失效，请统一使用huawei region，使用方式 @RPCCall(region=\"huawei\")，类名："+field.getName());
 					throw new RuntimeException("aliyun region已失效，请统一使用huawei region，使用方式 @RPCCall(region=\"huawei\")，类名：" + field.getName());
 				}
+				// 多个类多个代理 可能一个客户端连接服务端有多个链接
 				Object obj = grpcClientProxy.proxy(field.getType(), region, callTimeoutMillis);
 				if (obj == null) {
 					continue;

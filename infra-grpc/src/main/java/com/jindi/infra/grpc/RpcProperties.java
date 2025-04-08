@@ -7,8 +7,9 @@ import com.jindi.infra.grpc.server.ServerProperties;
 
 import lombok.Data;
 
+// grpc 客户端服务端配置
 @Data
-@ConfigurationProperties("rpc")
+@ConfigurationProperties("grpc")
 public class RpcProperties {
 
 	private Boolean enable = true;

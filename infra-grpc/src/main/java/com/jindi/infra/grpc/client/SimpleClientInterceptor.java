@@ -27,9 +27,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 
-/**
- * 简单客户端拦截器，为了降低grpc拦截器使用成本，抽象一些拦截器操作给业务使用
- */
+//简单拦截抽象场景
 @Slf4j
 @Order(Ordered.HIGHEST_PRECEDENCE + 1000)
 public class SimpleClientInterceptor implements ClientInterceptor {

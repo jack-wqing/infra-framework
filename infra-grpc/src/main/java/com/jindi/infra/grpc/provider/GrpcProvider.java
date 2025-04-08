@@ -30,6 +30,7 @@ import com.jindi.infra.grpc.util.SdkConfigUtils;
 import io.grpc.BindableService;
 import lombok.extern.slf4j.Slf4j;
 
+// 可能业务实现
 @Slf4j
 @RequestMapping("grpc")
 @RestController

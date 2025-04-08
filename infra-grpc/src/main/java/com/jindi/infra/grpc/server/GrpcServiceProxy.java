@@ -23,7 +23,16 @@ import org.springframework.core.annotation.AnnotationAwareOrderComparator;
 import org.springframework.util.CollectionUtils;
 
 import java.lang.reflect.Method;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -34,22 +43,20 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class GrpcServiceProxy {
 
 	private static final AtomicBoolean OPEN = new AtomicBoolean(false);
+
 	private static final int BOSS_N_THREADS = 1;
+
 	private static final String GRPC_SERVER_INVOKE = "grpc-server-invoke";
 
 	private Set<BindableService> bindableServices = Collections.synchronizedSet(new HashSet<>());
-	private Map<Class<?>, BindableService> serviceClassBindableServiceMap = Collections
-			.synchronizedMap(new HashMap<>());
 
-	/**
-	 * 配置属性
-	 */
+	private Map<Class<?>, BindableService> serviceClassBindableServiceMap = Collections.synchronizedMap(new HashMap<>());
+
+
 	@Autowired
 	private RpcProperties rpcProperties;
 
-	/**
-	 * grpc原生服务器
-	 */
+
 	private Server server;
 
 	public <T> void register(Class<?> serviceClass, BindableService bindableService) {
@@ -82,9 +89,10 @@ public class GrpcServiceProxy {
 	private void startServer() throws Exception {
 		log.info("RPC 服务端正在被启动");
 		NettyServerBuilder serverBuilder = NettyServerBuilder.forPort(rpcProperties.getServer().getPort())
-				.channelType(NioServerSocketChannel.class).bossEventLoopGroup(new NioEventLoopGroup(BOSS_N_THREADS))
-				.executor(ExecutorsUtils.newThreadPool(rpcProperties.getServer().getThreadPool(), rpcProperties.getServer().getWorkerThreads(), GRPC_SERVER_INVOKE))
-				.workerEventLoopGroup(new NioEventLoopGroup());
+			.channelType(NioServerSocketChannel.class)
+			.bossEventLoopGroup(new NioEventLoopGroup(BOSS_N_THREADS))
+			.executor(ExecutorsUtils.newThreadPool(rpcProperties.getServer().getThreadPool(), rpcProperties.getServer().getWorkerThreads(), GRPC_SERVER_INVOKE))
+			.workerEventLoopGroup(new NioEventLoopGroup());
 		if (rpcProperties.getSecurity().getEnable()) {
 			serverBuilder = serverBuilder.useTransportSecurity(
 					GrpcServiceProxy.class.getResourceAsStream(rpcProperties.getSecurity().getCertChain()),

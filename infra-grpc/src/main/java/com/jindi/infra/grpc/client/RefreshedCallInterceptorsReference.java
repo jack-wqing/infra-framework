@@ -11,7 +11,7 @@ import com.jindi.infra.grpc.extension.CallInterceptor;
 import com.jindi.infra.grpc.util.ACUtils;
 
 /**
- * 刷新RequestInterceptor列表信息
+ * 自定义的请求开始和结束的拦截器
  */
 public class RefreshedCallInterceptorsReference implements ApplicationListener<ContextRefreshedEvent> {
 

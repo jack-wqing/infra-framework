@@ -2,6 +2,9 @@ package com.jindi.infra.grpc;
 
 import lombok.Data;
 
+/**
+ * 安全配置
+ */
 @Data
 public class SecurityProperties {
 

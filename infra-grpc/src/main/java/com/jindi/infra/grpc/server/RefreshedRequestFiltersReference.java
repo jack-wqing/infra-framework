@@ -1,21 +1,15 @@
 package com.jindi.infra.grpc.server;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-
+import com.jindi.infra.grpc.extension.RequestFilter;
+import com.jindi.infra.grpc.util.ACUtils;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.core.annotation.AnnotationAwareOrderComparator;
 import org.springframework.util.CollectionUtils;
 
-import com.jindi.infra.grpc.extension.RequestFilter;
-import com.jindi.infra.grpc.util.ACUtils;
+import java.util.List;
 
-/**
- * 刷新RequestFilter列表信息
- */
+// 系统自定义的拦截器: 通过实现 RequestFilter
 public class RefreshedRequestFiltersReference implements ApplicationListener<ContextRefreshedEvent> {
 
 	private SimpleServerInterceptor simpleServerInterceptor;
@@ -34,6 +28,5 @@ public class RefreshedRequestFiltersReference implements ApplicationListener<Con
 			simpleServerInterceptor.setRequestFiltersReference(requestFilters);
 		}
 	}
-
 
 }

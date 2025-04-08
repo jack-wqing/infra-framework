@@ -18,9 +18,7 @@ import org.springframework.core.annotation.Order;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
-/**
- * 服务端接收到请求后,将请求头中的infra-context信息放入grpc上下文中
- */
+// 传输的请求信息
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class GrpcInfraContextServerInterceptor implements ServerInterceptor {
 

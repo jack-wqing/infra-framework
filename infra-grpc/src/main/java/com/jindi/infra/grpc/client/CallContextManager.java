@@ -19,9 +19,7 @@ import com.jindi.infra.grpc.util.MethodUtils;
 import io.grpc.BindableService;
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * 调用远程方法的上下文信息管理
- */
+// 方法调用上下文 -> 记录缓存
 @Slf4j
 public class CallContextManager {
 

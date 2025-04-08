@@ -20,9 +20,6 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * Grpc客户端代理
- *
- * @author changbo
- * @date 2021/7/8
  */
 @Slf4j
 public class GrpcClientProxy {

@@ -7,6 +7,7 @@ import io.grpc.ClientCall;
 import io.grpc.ManagedChannel;
 import io.grpc.MethodDescriptor;
 
+// Null Channel
 public class NullManagedChannel extends ManagedChannel {
 
 	@Override
